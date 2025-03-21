@@ -47,4 +47,7 @@ namespace CRUD
                     DataTable dt = new DataTable();
                     da.Fill(dt);
 
-                   
+                    dgvMahasiswa.AutoGenerateColumns = true;
+                    dgvMahasiswa.DataSource = dt;
+
+                    
