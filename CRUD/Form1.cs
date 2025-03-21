@@ -81,4 +81,25 @@ namespace CRUD
                         cmd.Parameters.AddWithValue("@Alamat", txtAlamat.Text.Trim());
 
                         int rowsAffected = cmd.ExecuteNonQuery();
-                       
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Data Berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            LoadData();
+                            ClearForm();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Data tidak berhasil ditambahkan!", "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message, "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+
+
+       
